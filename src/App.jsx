@@ -1,4 +1,4 @@
-
+import confetti from "canvas-confetti";
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
@@ -136,6 +136,64 @@ function App() {
 
     return () => clearInterval(interval);
   }, [screen, won, paused]);
+
+  // LEVEL COMPLETION CELEBRATION
+
+  // FULL SCREEN CONFETTI UNTIL USER CONTINUES
+
+useEffect(() => {
+  if (!won) return;
+
+  const colors = [
+    "#FFD700",
+    "#FFF1A8",
+    "#F6BB24",
+    "#FFFFFF",
+    "#EAC65C",
+    "#FF765F",
+    "#B78BFF"
+  ];
+
+  const defaults = {
+    startVelocity: 35,
+    spread: 360,
+    ticks: 80,
+    zIndex: 2000,
+    colors,
+    gravity: 0.9,
+    scalar: 1.2
+  };
+
+  const interval = setInterval(() => {
+
+    // Left side
+    confetti({
+      ...defaults,
+      particleCount: 35,
+      origin: {
+        x: Math.random() * 0.3,
+        y: Math.random() * 0.5
+      }
+    });
+
+    // Right side
+    confetti({
+      ...defaults,
+      particleCount: 35,
+      origin: {
+        x: 0.7 + Math.random() * 0.3,
+        y: Math.random() * 0.5
+      }
+    });
+
+  }, 300);
+
+  return () => {
+    clearInterval(interval);
+    confetti.reset();
+  };
+
+}, [won]);
 
   // CHECK VICTORY
 

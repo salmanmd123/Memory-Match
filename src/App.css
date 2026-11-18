@@ -1508,7 +1508,7 @@ button:focus-visible {
   .card-back {
     border-radius: 10px;
     border-width: 2px;
-    font-size: 27px;
+    font-size: 50px;
   }
 
   .card-front::after {
