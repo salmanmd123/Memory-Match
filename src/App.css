@@ -456,11 +456,8 @@ button:focus-visible {
   align-items: center;
 
   background:
-    linear-gradient(
-      rgba(48,29,19,0.30),
-      rgba(48,29,19,0.42)
-    ),
-    url(/assets/mm-bg.png) center center / cover fixed;
+    
+    url(/assets/mm-main-bg.png) center center / cover fixed;
 
   overflow-x: hidden;
 }
@@ -507,11 +504,13 @@ button:focus-visible {
 }
 
 .pause-control {
+  position: fixed;
   left: 25px;
 }
 
 .help-control {
   right: 25px;
+  position: fixed;
 }
 
 /* =====================================
@@ -542,16 +541,16 @@ button:focus-visible {
 .game-heading h2 {
   margin-top: 8px;
 
-  color: #fff0b2;
+  color: #6b46b6;
   font-size: clamp(20px, 3vw, 30px);
 
-  text-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  text-shadow: 0 3px 5px rgba(255, 255, 255, 0.5);
 }
 
 .game-heading p {
   margin-top: 5px;
 
-  color: #ffedce;
+  color: #b0410e;
   font-size: 15px;
 
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
@@ -564,7 +563,8 @@ button:focus-visible {
 .game-board-container {
   position: relative;
 
-  width: 100%;
+  width: auto;
+  height: auto;
   max-width: 680px;
 
   margin: 0 auto;
@@ -1281,6 +1281,7 @@ button:focus-visible {
   .game-page {
     padding: 22px 18px 35px;
     background-attachment: scroll;
+    justify-content: center;
   }
 
   .game-board-container,
@@ -1436,15 +1437,15 @@ button:focus-visible {
   }
 
   .game-heading h1 {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .game-heading h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .game-heading p {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.5;
   }
 
@@ -1580,7 +1581,7 @@ button:focus-visible {
   }
 
   .game-heading h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .game-heading h2 {
@@ -1662,3 +1663,7 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+
+
