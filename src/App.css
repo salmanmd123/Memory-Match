@@ -1664,6 +1664,12 @@ button:focus-visible {
   }
 }
 
+/* FIXED MEMORY CARD SIZE - DESKTOP & TABS ONLY */
 
-
-
+@media (min-width: 550px) {
+  .memory-card {
+    width: 80px;
+    height: 80px;
+    aspect-ratio: unset;
+  }
+}
